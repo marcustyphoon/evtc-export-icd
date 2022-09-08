@@ -28,6 +28,8 @@ const processJSON = async function ({ resultFileName, jsonFileName }) {
       : hitsInput;
 
     const lastHitMs = hitsInput[hitsInput.length - 1]?.Time ?? 0;
+    const firstHitMs = hitsInput[0]?.Time ?? 0;
+    const durationMs = lastHitMs - firstHitMs;
 
     const simCount = chance === 1 ? 1 : 10000;
 
@@ -44,7 +46,7 @@ const processJSON = async function ({ resultFileName, jsonFileName }) {
       }
     }
 
-    const duration = (lastHitMs / 1000) * simCount;
+    const duration = (durationMs / 1000) * simCount;
     const rate = roundTwo((procs / duration) * 10);
     const interval = roundTwo(duration / procs);
 
