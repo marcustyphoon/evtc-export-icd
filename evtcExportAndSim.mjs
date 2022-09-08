@@ -86,6 +86,7 @@ const processJSON = async function ({ resultFileName, jsonFileName }) {
     simulate(`food lifesteal (2s, 66%)`, Hits, { icd: 2, chance: 0.66 });
     simulate(`vulture perma (1/4s)`, Hits, { icd: 0.25, criticalOnly: false });
     simulate(`owp perma (1s)`, Hits, { icd: 1, criticalOnly: false });
+    simulate(`owp perma old (0.25s)`, Hits, { icd: 0.25, criticalOnly: false });
 
     resultText += '\n';
     console.log('\n');
